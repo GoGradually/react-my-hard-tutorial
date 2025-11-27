@@ -20,7 +20,6 @@ function Button({ description, variant, size, disabled, onClick }: ButtonProps) 
 
   const baseClass = `${variantMap[variant]} ${sizeMap[size]} rounded`;
   const disabledClass = disabled ? " opacity-50 cursor-not-allowed" : "";
-  console.log("Button props:", { description, variant, size });
 
     return (
     <button

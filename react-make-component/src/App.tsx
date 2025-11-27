@@ -1,7 +1,7 @@
-import Playground from "./pages/Playground";
+import LoginPage from "./pages/LoginPage.tsx";
 
 function App() {
-  return <Playground />;
+  return <LoginPage />;
 }
 
 export default App;

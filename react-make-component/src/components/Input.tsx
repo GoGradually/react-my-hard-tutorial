@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react';
+import type {ChangeEvent} from 'react';
 
 type InputProps = {
     label?: string;
@@ -13,12 +13,15 @@ function Input({label, value, type, onChange}: InputProps) {
     }
     return (
         <div>
-            {label && <label>{label}</label>}
-            <input
-                type={type || 'text'}
-                value={value}
-                onChange={handleChange}
-            />
+            <span>{label && <label>{label}</label>}
+            </span>
+            <span>
+                <input
+                    type={type || 'text'}
+                    value={value}
+                    onChange={handleChange}
+                />
+            </span>
         </div>
     );
 }
