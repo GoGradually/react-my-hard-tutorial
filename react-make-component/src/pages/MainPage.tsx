@@ -8,6 +8,7 @@ import Table from "../components/Table.tsx";
 import { useState } from "react";
 import Modal from "../components/Modal.tsx";
 import Button from "../components/Button.tsx";
+import ToastLoadButton from "../components/ToastLoadButton.tsx";
 
 function MainPage() {
     const items = ["첫 번째 아이템", "두 번째 아이템", "세 번째 아이템", "네 번째 아이템", "다섯 번째 아이템"];
@@ -41,6 +42,9 @@ function MainPage() {
         </div>
         <List items={items} renderItem={(item) => item}></List>
         <Table columns={tableData.columns} data={tableData.data}></Table>
+        <div>
+            <ToastLoadButton></ToastLoadButton>
+        </div>
         <div>
             <Stack align={"center"} direction={"column"} justify={"space-between"} gap={12}>
                 <Card title={"첫 번째 카드"} subtitle={"haha"}>
