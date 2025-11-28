@@ -1,6 +1,6 @@
 type TableProps = {
     columns: { key: string; title: string }[];
-    data: Record<string, any>[];
+    data: Record<string, string>[];
 }
 
 function Table(props: TableProps) {
