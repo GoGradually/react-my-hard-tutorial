@@ -5,6 +5,10 @@ import TabsExample from "./TabsExample.tsx";
 import List from "../components/List.tsx";
 import Table from "../components/Table.tsx";
 
+import { useState } from "react";
+import Modal from "../components/Modal.tsx";
+import Button from "../components/Button.tsx";
+
 function MainPage() {
     const items = ["첫 번째 아이템", "두 번째 아이템", "세 번째 아이템", "네 번째 아이템", "다섯 번째 아이템"];
 
@@ -22,9 +26,19 @@ function MainPage() {
         ]
     }
 
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     return <>
         <NavBar></NavBar>
         <TabsExample></TabsExample>
+
+        <Modal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)}>
+            <h2>모달 창입니다!</h2>
+            <p>안녕</p>
+        </Modal>
+        <div>
+            <Button variant={"primary"} size={"large"} description={"모달 켜기"} onClick={() => setModalIsOpen(true)}></Button>
+        </div>
         <List items={items} renderItem={(item) => item}></List>
         <Table columns={tableData.columns} data={tableData.data}></Table>
         <div>
