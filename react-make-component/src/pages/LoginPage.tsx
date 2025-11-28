@@ -3,6 +3,8 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import Checkbox from "../components/Checkbox.tsx";
 import Select from "../components/Select.tsx";
+import {BottomSheet} from "../components/BottomSheet.tsx";
+import SignUpPage from "./SignUpPage.tsx";
 
 function LoginPage() {
     const [name, setName] = useState("");
@@ -17,6 +19,8 @@ function LoginPage() {
       { value: "일식", label: "일식" },
       { value: "양식", label: "양식" },
     ];
+
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
     return (
     <div>
@@ -38,8 +42,15 @@ function LoginPage() {
             <Button description="제출" variant="primary" size="medium" onClick={() => {
                 alert(`이름: ${name}\n비밀번호: ${password}\n로그인 정보 기억하기: ${containLoginInfo}\n배고픔 여부: ${isHungry}\n선택한 메뉴: ${menu}`);
             }}/>
+            <Button description={"회원가입"} variant="primary" size="medium" onClick={() => {setIsSignUpOpen(true)}}></Button>
         </div>
-
+        {/* 회원가입 바텀 시트 */}
+        <BottomSheet
+            open={isSignUpOpen}
+            onClose={() => setIsSignUpOpen(false)}
+        >
+            <SignUpPage />
+        </BottomSheet>
     </div>
   );
 }
