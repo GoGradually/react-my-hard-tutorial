@@ -1,10 +1,12 @@
 import Stack from "../components/Stack.tsx";
 import Card from "../components/Card.tsx";
 import NavBar from "../components/NavBar.tsx";
+import TabsExample from "./TabsExample.tsx";
 
 function MainPage() {
     return <>
         <NavBar></NavBar>
+        <TabsExample></TabsExample>
         <div>
             <Stack align={"center"} direction={"column"} justify={"space-between"} gap={12}>
                 <Card title={"첫 번째 카드"} subtitle={"haha"}>
