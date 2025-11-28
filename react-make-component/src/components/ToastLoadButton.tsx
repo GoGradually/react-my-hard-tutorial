@@ -1,5 +1,5 @@
 import Button from "./Button.tsx";
-import {useToast} from "./ToastProvider.tsx";
+import useToast from "../hooks/useToast.tsx";
 
 function ToastLoadButton() {
     const {showToast}  = useToast();
