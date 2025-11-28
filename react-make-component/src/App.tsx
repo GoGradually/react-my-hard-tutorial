@@ -1,10 +1,10 @@
-import MainPage from "./pages/MainPage.tsx";
 import {ToastProvider} from "./components/ToastProvider.tsx";
+import SignUpPage from "./pages/SignUpPage.tsx";
 
 function App() {
     return (
         <ToastProvider>
-            <MainPage/>
+            <SignUpPage/>
         </ToastProvider>
     );
 }
